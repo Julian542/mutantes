@@ -1,0 +1,64 @@
+<div>
+<button type="button" class="btn btn-primary btn-lg btn-block" (click)="agregar()">Agregar</button>
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-success btn-lg btn-block" (click)="stats()" data-toggle="modal" data-target="#exampleModal">
+  Consultar Ratio
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">RATIO</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       {{consulta}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">clasificacion</th>
+        <th scope="col">C1</th>
+        <th scope="col">C2</th>
+        <th scope="col">C3</th>
+        <th scope="col">C4</th>
+        <th scope="col">C5</th>
+        <th scope="col">C6</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ente of entes">
+        <th scope="row">{{ente.id}}</th>
+        <td>{{ente.nombre}}</td>
+        <td>{{ente.clasificacion}}</td>
+        <td>{{ente.dna1}}</td>
+        <td>{{ente.dna2}}</td>
+        <td>{{ente.dna3}}</td>
+        <td>{{ente.dna4}}</td>
+        <td>{{ente.dna5}}</td>
+        <td>{{ente.dna6}}</td>
+        <td>
+            <button type="button" class="btn btn-info" (click)="update(ente.id)">Modificar</button>
+            <button type="button" class="btn btn-danger" (click)="delete(ente.id)">Borrar</button>
+        </td>
+       
+      </tr>
+    </tbody>
+  </table>
+</div>
+  
